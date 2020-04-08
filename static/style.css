@@ -1,0 +1,61 @@
+body{
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color: #fff;
+}
+
+/* The hero image */
+.logo-header {
+  /* Use "linear-gradient" to add a darken background effect to the image. */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("./imgs/header-logo.jpg");
+
+  /* Set a specific height */
+  height: 150px;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.header-text {
+  text-align: center;
+  position: relative;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+.sentiment-container {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.sentiment-center {
+	display: inline-block;
+}
+
+.results-container {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.results-center {
+	display: inline-block;
+}
+
+.result-negative {
+	color:white; 
+	background-color: #F26122;
+	padding: 5px 10px;
+}
+
+.result-positive {
+	color:white; 
+	background-color: #A1CD3B;
+	padding: 5px 10px;
+}

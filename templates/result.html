@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+
+	<header>
+		<div class="logo-header">
+            <div class="header-text">
+              <h1>Natual Language Processing App</h1>
+              <p>by Flask</p>
+            </div>
+          </div>
+    </header>
+    
+    
+    <div class="results-container">
+        <div class="results-center">
+            <p>Result:</p>
+            {% if prediction < 0%}
+            <!--<h2 style="color:white; background-color: #F26122;">Negative</h2>-->
+            <h2 class="result-negative">Negative</h2>
+            {% elif prediction > 0%}
+            <!--<h2 style="color: white; background-color: #A1CD3B;">Positive</h2>-->
+            <h2 class="result-positive">Positive</h2>
+            {% endif %}
+            <h5>Sentiment value Predicted: {{ prediction }}<h5>
+        </div>
+    </div>
+    
+
+</body>
+</html>
