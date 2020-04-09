@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 from nltk import word_tokenize
 from collections import Counter
 
+nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 wordstring = 'it was the best of times, it was the worst of times!! but best times'
