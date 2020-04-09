@@ -21,10 +21,13 @@
     <div class="results-container">
         <div class="results-center">
             <p>Result:</p>
-            <!--<h5>Word Counts: {{ word_count }}<h5>-->
-            {% for table in tables %}
-                {{ table|safe }}
-            {% endfor %}
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <!--<h5>Word Counts: {{ word_count }}<h5>-->
+                    {% for table in tables %}
+                        {{ table|safe }}
+                    {% endfor %}
+            </div>
+            
         </div>
     </div>
     

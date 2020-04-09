@@ -60,7 +60,7 @@ def topic_predict():
         counts_df_high.columns = ['Word', 'N']
         counts_df_high = counts_df_high.sort_values(by=['N'], ascending=False)
 
-    return render_template('result_topic.html', tables=[counts_df_high.to_html(classes='table table-dark',  header="true", index = False)])
+    return render_template('result_topic.html', tables=[counts_df_high.to_html(classes='table table-striped table-dark table-hover .table-responsive',  header="true", index = False)])
 
 
 if __name__ == '__main__':
