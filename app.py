@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import re
 from flask import Flask,render_template,url_for,request
 from textblob import TextBlob
@@ -29,8 +30,8 @@ def topic():
 
 
 # predict sentiment page ---
-@app.route('/predict',methods=['POST'])
-def predict():
+@app.route('/sentiment_predict',methods=['POST'])
+def sentiment_predict():
 	
 
 	if request.method == 'POST':
@@ -38,7 +39,7 @@ def predict():
 		#data = [message]
 		sentiment_obj = TextBlob(message)
 		my_prediction = sentiment_obj.sentiment.polarity
-	return render_template('result.html',prediction = my_prediction)
+	return render_template('result_sentiment.html',prediction = my_prediction)
 
 # predict topic page ---
 @app.route('/topic_predict', methods=['POST'])
@@ -53,8 +54,12 @@ def topic_predict():
             if w not in stop_words: new_sentence.append(w)
         counts = Counter(new_sentence)
         counts_high = {x : counts[x] for x in counts if counts[x] >= 3}
-        
-    return render_template('result_topic.html', word_count=counts_high)
+        counts_df_high = pd.DataFrame.from_dict(counts_high, orient='index', columns=['Freq'])
+        counts_df_high = counts_df_high.reset_index()
+        counts_df_high.columns = ['Word', 'N']
+        counts_df_high = counts_df_high.sort_values(by=['N'], ascending=False)
+
+    return render_template('result_topic.html', tables=[counts_df_high.to_html(classes='table table-dark',  header="true", index = False)])
 
 
 if __name__ == '__main__':

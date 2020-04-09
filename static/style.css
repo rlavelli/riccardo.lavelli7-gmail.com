@@ -29,7 +29,7 @@ body{
   color: white;
 }
 
-
+/* sentiment analysis section*/
 .sentiment-container {
 	text-align: center;
 	margin-top: 100px;
@@ -58,4 +58,9 @@ body{
 	color:white; 
 	background-color: #A1CD3B;
 	padding: 5px 10px;
+}
+
+/* topic model section */
+.table-dark td, .table-dark th, .table-dark thead th {
+  text-align: center;
 }

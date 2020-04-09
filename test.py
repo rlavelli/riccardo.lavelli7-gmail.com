@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import re
 import nltk
 from nltk.corpus import stopwords
@@ -22,6 +23,9 @@ counts = Counter(new_sentence)
 counts_high = {x : counts[x] for x in counts if counts[x] >= 3}
 x_labels = counts.keys()
 y_values = counts.values()
+counts_df = pd.DataFrame.from_dict(counts_high, orient='index', columns=['Freq'])
+counts_df = counts_df.reset_index()
+counts_df.columns = ['Word', 'N']
 
 print(wordstring)
 print('')
@@ -30,6 +34,8 @@ print('')
 print(counts)
 print('')
 print(counts_high)
+print('')
+print(counts_df)
 
 
 # nitems = len(y_values)
